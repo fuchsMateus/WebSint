@@ -1,0 +1,230 @@
+body {
+  padding: 1em;
+  background-color: rgb(203, 203, 218);
+}
+
+.container {
+  font-family: "Arimo", sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+}
+
+.container h4 {
+  border-bottom: 1px solid #ED0000;
+  padding-bottom: 0.2em;
+}
+
+.container section {
+  position: relative;
+  background: #222 radial-gradient(transparent, rgba(0, 0, 0, 0.2));
+  padding: 1em;
+  padding-left: calc(30px + 1em);
+  padding-right: calc(100px + 1em);
+  border: 2px outset #333;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), inset 0 0 8px 2px rgba(0, 0, 0, 0.3);
+}
+
+.container section:before,
+.container section:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: #111 linear-gradient(black, #333 20%, #444 30%, #333 32%, #111 100%);
+  background-size: 100% 5px;
+}
+
+.container section:before {
+  left: 0;
+  width: 30px;
+}
+
+.container section:after {
+  right: 0;
+  width: 100px;
+}
+
+#app {
+  min-width: 720px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+div.row {
+  align-items: stretch !important;
+  justify-content: center !important;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+section h4 {
+  margin-bottom: 0.5em;
+}
+
+.sublabel {
+  font-size: 0.7em !important;
+  margin-bottom: 0.3em;
+}
+
+fieldset {
+  margin-bottom: 0.5em;
+  padding: 0.4em !important;
+  border-color: #aaa !important;
+  flex-direction: column !important;
+}
+
+fieldset legend {
+  font-size: 0.6em !important;
+}
+
+.generic-slider {
+  margin-bottom: 0.3em !important;
+}
+
+.generic-slider:last-child {
+  margin-bottom: 0 !important;
+}
+
+.teclado {
+  margin: 0 1em 0 0;
+}
+
+.teclado button {
+  height: 80px !important;
+  width: 40px !important;
+  position: relative;
+}
+
+.teclado button.sustenido {
+  height: 40px !important;
+}
+
+.visualizador {
+  border: 8px inset #444;
+  background: #200 radial-gradient(transparent, #100);
+  box-shadow: inset 0 0 6px 0 rgba(255, 0, 0, 0.4);
+}
+
+#sintetizador h4 {
+  margin-top: 0;
+}
+
+#sintetizador #teclado,
+#sintetizador .teclado {
+  position: relative;
+  border: 4px inset #444;
+}
+
+#sintetizador #teclado button,
+#sintetizador .teclado button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  border: 1px solid #555;
+  height: 150px;
+  width: 60px;
+  text-transform: inherit;
+  cursor: pointer;
+  text-align: left;
+  line-height: 1;
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  outline: none;
+}
+
+#sintetizador #teclado button.sustenido,
+#sintetizador .teclado button.sustenido {
+  background-color: #333;
+  color: #999;
+  position: absolute;
+  z-index: 10;
+  transform: translate(-50%);
+  height: 50%;
+}
+
+#sintetizador #teclado button:hover,
+#sintetizador .teclado button:hover {
+  box-shadow: inset 0 -10px 10px #555;
+}
+
+#sintetizador .row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+#sintetizador input[type=range] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #222;
+  border: 1px inset #333;
+  box-shadow: inset 0 10px 5px rgba(0, 0, 0, 0.3);
+  height: 1em;
+  cursor: pointer;
+  width: 120px;
+}
+
+#sintetizador input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #444;
+  width: 2em;
+  height: 1em;
+  border: 3px outset #222;
+}
+
+#sintetizador fieldset {
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+}
+
+#sintetizador fieldset legend {
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+  font-size: 0.8em;
+}
+
+#sintetizador fieldset legend:before {
+  content: "";
+  display: inline-block;
+  height: 0.8em;
+  width: 0.8em;
+  background: #ED0000;
+  margin-right: 0.4em;
+}
+
+#sintetizador fieldset label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5em;
+}
+
+#sintetizador fieldset label:last-child {
+  margin-bottom: 0;
+}
+
+#sintetizador fieldset .sidelabel {
+  display: inline-block;
+  font-size: 0.8em;
+  width: 3em;
+}
+
+#sintetizador fieldset .sublabel {
+  display: block;
+  font-size: 0.8em;
+  text-align: center;
+}

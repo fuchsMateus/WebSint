@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Questionário</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2,
+        p {
+            margin: 0;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .options input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        /* Estilo da animação de vitória */
+        @keyframes victoryAnimation {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Estilo da animação de derrota */
+        @keyframes defeatAnimation {
+            0% {
+                transform: rotate(0);
+            }
+
+            50% {
+                transform: rotate(10deg);
+            }
+
+            100% {
+                transform: rotate(0);
+            }
+        }
+
+        /* Estilos adicionais */
+        .animation-container {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .animation-container.show {
+            display: block;
+            text-align: center;
+        }
+
+        .victory-animation {
+            animation: victoryAnimation 1s ease-in-out;
+            color: #00cc00;
+        }
+
+        .defeat-animation {
+            animation: defeatAnimation 1s ease-in-out;
+            color: #cc0000;
+        }
+
+        #timer {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color:black;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+
+        .green {
+            color: #00cc00;
+        }
+
+        .yellow {
+            color: yellow;
+        }
+
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="timer" class="green">Tempo restante: 60 segundos</div>
+        <h1>Questionário</h1>
+        <br>
+        <div class="question">
+            <h2>1. Qual é a finalidade do envelope ADSR em um sintetizador?</h2>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a"> a) Controlar a forma de onda</label>
+                <label><input type="radio" name="q1" value="b"> b) Controlar a intensidade ao longo do tempo</label>
+                <label><input type="radio" name="q1" value="c"> c) Controlar o filtro</label>
+                <label><input type="radio" name="q1" value="d"> d) Controlar o efeito de eco</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <h2>2. Qual parâmetro do ADSR controla o tempo que leva para um som atingir seu volume máximo após ser
+                disparado?</h2>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a"> a) Sustain</label>
+                <label><input type="radio" name="q2" value="b"> b) Decay</label>
+                <label><input type="radio" name="q2" value="c"> c) Release</label>
+                <label><input type="radio" name="q2" value="d"> d) Attack</label>
+            </div>
+        </div>
+        <div class="question">
+            <h2>3. Qual é o nome do efeito de áudio que cria cópias adicionais de um som, atrasando-as no tempo?</h2>
+            <div class="options">
+                <label><input type="radio" name="q3" value="a"> a) Reverb</label>
+                <label><input type="radio" name="q3" value="b"> b) Delay</label>
+                <label><input type="radio" name="q3" value="c"> c) Flanger</label>
+                <label><input type="radio" name="q3" value="d"> d) Chorus</label>
+            </div>
+        </div>
+        <div class="question">
+            <h2>4. Qual parâmetro do ADSR controla a duração do som após o ataque e durante o tempo em que a tecla é
+                mantida pressionada?</h2>
+            <div class="options">
+                <label><input type="radio" name="q4" value="a"> a) Sustain</label>
+                <label><input type="radio" name="q4" value="b"> b) Decay</label>
+                <label><input type="radio" name="q4" value="c"> c) Release</label>
+                <label><input type="radio" name="q4" value="d"> d) Attack</label>
+            </div>
+        </div>
+        <div class="question">
+            <h2>5. Qual é o tipo de filtro que remove frequências altas do som?</h2>
+            <div class="options">
+                <label><input type="radio" name="q5" value="a"> a) Filtro Passa-Alta</label>
+                <label><input type="radio" name="q5" value="b"> b) Filtro Passa-Baixa</label>
+                <label><input type="radio" name="q5" value="c"> c) Filtro Notch</label>
+                <label><input type="radio" name="q5" value="d"> d) Filtro Peaking</label>
+            </div>
+        </div>
+        <div class="question">
+            <h2>6. Qual é o componente fundamental em um sintetizador responsável por criar o sinal de áudio que será
+                direcionado para o alto-falante ou fone de ouvido?</h2>
+            <div class="options">
+                <label><input type="radio" name="q6" value="a"> a) Filtro</label>
+                <label><input type="radio" name="q6" value="b"> b) Oscilador</label>
+                <label><input type="radio" name="q6" value="c"> c) ADSR</label>
+                <label><input type="radio" name="q6" value="d"> d) Resonância</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <h2>7. O que é uníssono ou unison em síntese sonora?</h2>
+            <div class="options">
+                <label><input type="radio" name="q7" value="a"> a) É a combinação de diferentes osciladores, filtros e
+                    envelopes de amplitude.</label>
+                <label><input type="radio" name="q7" value="b"> b) É a fase do ADSR responsável por manter um volume
+                    constante enquanto a tecla é pressionada.</label>
+                <label><input type="radio" name="q7" value="c"> c) É a técnica de juntar três osciladores, cada um
+                    ligeiramente desafinado em relação ao outro.</label>
+                <label><input type="radio" name="q7" value="d"> d) É o tipo de formato de onda que gera um som mais
+                    brilhante e expressivo.</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <h2>8. Qual é o formato de onda que produz um som puro e suave?</h2>
+            <div class="options">
+                <label><input type="radio" name="q8" value="a"> a) Senoidal (ou Sine)</label>
+                <label><input type="radio" name="q8" value="b"> b) Quadrada (ou Square)</label>
+                <label><input type="radio" name="q8" value="c"> c) Triangular (ou Triangle)</label>
+                <label><input type="radio" name="q8" value="d"> d) Dente de serra (ou Sawtooth)</label>
+            </div>
+        </div>
+
+        <button onclick="calcularPontuacao()">Enviar</button>
+        <button onclick="refazerQuiz()">Refazer Questionário</button>
+        <button onclick="window.location.href = '/WebSint'">Voltar ao Sintetizador</button>
+        <p id="result"></p>
+
+        <div class="animation-container" id="victoryAnimation">
+            <p class="victory-animation">Parabéns! Você acertou tudo!</p>
+        </div>
+        <div class="animation-container" id="defeatAnimation">
+            <p class="defeat-animation">Que pena! Você não acertou todas as respostas.</p>
+        </div>
+    </div>
+
+    <script>
+        function calcularPontuacao() {
+            clearInterval(timerInterval);
+            const radio = document.querySelectorAll('.question input[type="radio"]');
+            radio.forEach((pergunta) => {
+                pergunta.disabled = true;
+            });
+            let pontuacao = 0;
+            const respostas = {
+                q1: 'b',
+                q2: 'd',
+                q3: 'b',
+                q4: 'a',
+                q5: 'b',
+                q6: 'b',
+                q7: 'c',
+                q8: 'a'
+
+            };
+
+            const perguntas = document.querySelectorAll('.question');
+            perguntas.forEach((pergunta) => {
+                const input = pergunta.querySelector('input:checked');
+                if (input) {
+                    const nomePergunta = input.name;
+                    const respostaUsuario = input.value;
+                    if (respostaUsuario === respostas[nomePergunta]) {
+                        pontuacao++;
+                    }
+                }
+            });
+
+            const resultadoElemento = document.getElementById('result');
+            resultadoElemento.textContent = `Você acertou ${pontuacao} de ${Object.keys(respostas).length}.`;
+
+            const victoryAnimation = document.getElementById('victoryAnimation');
+            const defeatAnimation = document.getElementById('defeatAnimation');
+
+            if (pontuacao === Object.keys(respostas).length) {
+                victoryAnimation.classList.add('show');
+                defeatAnimation.classList.remove('show');
+            } else {
+                victoryAnimation.classList.remove('show');
+                defeatAnimation.classList.add('show');
+            }
+        }
+
+        function refazerQuiz() {
+            window.scrollTo(0, 0);
+            location.reload();
+        }
+
+        let segundosRestantes;
+        let timerInterval;
+
+        // Função para atualizar o timer e verificar se o tempo esgotou
+        function atualizarTimer() {
+            const timerElemento = document.getElementById('timer');
+            timerElemento.textContent = `Tempo restante: ${segundosRestantes} segundos`;
+
+            if (segundosRestantes > 30) {
+                timerElemento.className = 'green';
+            } else if (segundosRestantes > 10) {
+                timerElemento.className = 'yellow';
+            } else {
+                timerElemento.className = 'red';
+            }
+
+            // Verificar se o tempo esgotou
+            if (segundosRestantes <= 0) {
+                clearInterval(timerInterval);
+                // Chamar a função para calcular a pontuação ao término do tempo
+                calcularPontuacao();
+            }
+
+            segundosRestantes--;
+        }
+
+        function iniciarTimer() {
+            clearInterval(timerInterval);
+            // Definir o tempo limite em segundos (1 minuto = 60 segundos)
+            const tempoLimite = 60;
+
+            // Variável para controlar o tempo restante
+            segundosRestantes = tempoLimite;
+
+            // Chamar a função para atualizar o timer a cada segundo
+            atualizarTimer();
+
+            // Definir o intervalo de 1 segundo (1000 milissegundos)
+            timerInterval = setInterval(atualizarTimer, 1000);
+        }
+
+        // Iniciar o timer ao carregar a página
+        document.addEventListener('DOMContentLoaded', iniciarTimer);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+/* Texto.css (Updated) */
+
+.accordion-container {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    position: relative;
+    
+  }
+  
+  .accordion {
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #222;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    color: white;
+  }
+  
+  .accordion.active {
+    background-color: #444;
+  }
+  
+  .texto-content {
+    color: white;
+    font-family: "Arial", sans-serif;
+    line-height: 1.6;
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #333;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .texto-content ul {
+    margin-left: 20px;
+  }
+  
+  
+  .accordion:hover {
+    background-color: #444;
+    transition: background-color 0.3s ease;
+  }
+
+  .imagem-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
